@@ -15,3 +15,8 @@ Ingredient.create(name: "ginger beer")
 Ingredient.create(name: "rum")
 Ingredient.create(name: "vodka")
 Ingredient.create(name: "ginger")
+
+Cocktail.create(name: "Moscow Mule")
+Cocktail.create(name: "Gin Tonic")
+Cocktail.create(name: "Strawberry Daquiri")
+
