@@ -1,14 +1,12 @@
-  <h1 class = "text-center">Cocktails</h1>
+<h1 class = "text-center my-3 p-5">MISTER COCKTAIL</h1>
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
       <div class="col-sm-4">
         <div class="card my-3 p-3">
-          <h3 class="text-center"><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-          <% cocktail.doses.each do |dose| %>
-          <%= dose.ingredient.name %>
-          <%= link_to "Add a new dose", new_cocktail_dose_path, class: 'btn btn-primary' %>
-          <% end %>
+          <h3 class="text-center" style="font-weight: lighter;"><%= cocktail.name %></h3>
+          <img src= "https://source.unsplash.com/random?cocktail" width= "300" height="350" class="rounded float-center" alt="">
+          <p class= "text-center my-3"><%= link_to "Show details", cocktail_path(cocktail), class: "btn btn-outline-dark" %></p>
         </div>
       </div>
       <%end%>
@@ -17,6 +15,8 @@
 </div>
 </div>
 
-<div class="text-center">
-<%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+<div class="text-center my-3 pb-3">
+  <%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-dark' %>
 </div>
+
+

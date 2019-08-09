@@ -9,9 +9,15 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://kit.fontawesome.com/721627a3c7.js"></script>
 </head>
 
 <body>
+  <nav class="navbar navbar-white bg-white">
+  <span class="navbar-brand">
+  <p class="mb-0" style="font-size: 32px;"><%= link_to "<i class='fas fa-home'></i>".html_safe, cocktails_path%></p>
+  </span>
+</nav>
   <%= yield %>
   <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
   <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
