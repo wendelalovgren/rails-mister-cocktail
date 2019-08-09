@@ -1,10 +1,22 @@
-<h1>Cocktails</h1>
-<ul class="list-group">
-  <% @cocktails.each do |cocktail| %>
-  <li class="list-group-item">
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  </li>
-  </ul>
-  <%end%>
+  <h1 class = "text-center">Cocktails</h1>
+  <div class="container">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-4">
+        <div class="card my-3 p-3">
+          <h3 class="text-center"><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+          <% cocktail.doses.each do |dose| %>
+          <%= dose.ingredient.name %>
+          <%= link_to "Add a new dose", new_cocktail_dose_path, class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+</div>
 
-  <%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+<div class="text-center">
+<%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-primary' %>
+</div>
