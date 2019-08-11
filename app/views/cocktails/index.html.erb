@@ -1,11 +1,14 @@
 <h1 class = "text-center my-3 p-5">MISTER COCKTAIL</h1>
+<div class="text-center my-3">
+  <%= link_to "Add new cocktail", new_cocktail_path, class: 'btn btn-dark' %>
+</div>
   <div class="container">
     <div class="row">
       <% @cocktails.each do |cocktail| %>
       <div class="col-sm-4">
-        <div class="card my-3 p-3">
+        <div class="card my-3 p-3" class="text-center">
           <h3 class="text-center" style="font-weight: lighter;"><%= cocktail.name %></h3>
-          <img src= "https://source.unsplash.com/random?cocktail" width= "300" height="350" class="rounded float-center" alt="">
+          <img src= "https://source.unsplash.com/random?cocktail" width= "300" height="350" alt="" style="margin: 0 auto;">
           <p class= "text-center my-3"><%= link_to "Show details", cocktail_path(cocktail), class: "btn btn-outline-dark" %></p>
         </div>
       </div>
@@ -13,10 +16,6 @@
     </div>
   </div>
 </div>
-</div>
-
-<div class="text-center my-3 pb-3">
-  <%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn btn-dark' %>
 </div>
 
 
