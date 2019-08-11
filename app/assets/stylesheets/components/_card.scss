@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

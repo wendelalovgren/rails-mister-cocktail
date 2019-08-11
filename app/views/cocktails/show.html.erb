@@ -1,13 +1,25 @@
-<div class="container" class="text-center">
-    <div class="card my-3 p-3 bg-white" style="width: 22rem;" class="text-center" style="position: center;">
-      <h3 style="text-align: center; font-weight: lighter;" ><%= @cocktail.name %></h3>
-      <img src= "https://source.unsplash.com/random?cocktail" width= "300" height="350" alt="" style="margin: 0 auto;">
-      <% @cocktail.doses.each do |dose| %>
-      <p style="text-align: center;" class="p-0 mt-2"><%= dose.description %>: <%= dose.ingredient.name %>
-        <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, dose_path(dose), method: :delete%>
-      </p>
-      <% end %>
-      <p class="text-center"><%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: 'btn btn-dark' %>
-      </p>
+<div class="cards" style="align-items: center;">
+  <div class="container" class="text-center" style="text-align: center;">
+   <div class="row justify-content-center">
+    <div class="card my-3 p-3 mt-5 bg-white" style="width: 38rem; height: 42rem;" class="text-center" style="position: center;">
+      <h3 class="pb-2" style="text-align: center; font-weight: lighter;" ><%= @cocktail.name %></h3>
+      <img src= "https://source.unsplash.com/random?cocktail" width= "525" height="570" alt="" style="margin: 0 auto;">
+    </div>
   </div>
+</div>
+
+<div class="container" class="text-center">
+ <div class="row justify-content-center">
+  <div class="card my-3 p-3 bg-white" style="width: 38rem;" class="text-center" style="position: center;">
+    <h5>Ingredients:</h5>
+    <% @cocktail.doses.each do |dose| %>
+    <p class="p-0 mt-2"><%= dose.description %> <%= dose.ingredient.name %>
+      <%= link_to "<i class='fas fa-trash-alt'></i>".html_safe, dose_path(dose), method: :delete%>
+    </p>
+    <% end %>
+    <p class="text-center"><%= link_to "Edit/Add", new_cocktail_dose_path(@cocktail), class: 'btn btn-dark' %>
+    </p>
+  </div>
+</div>
+</div>
 </div>
